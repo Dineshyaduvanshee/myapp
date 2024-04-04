@@ -3,13 +3,31 @@ import Man from "./Man";
 import App from "../App";
 
 class Person extends Component {
+    constructor(props){
+        super(props);
+        this.props = props;
+        this.state = {
+            name:"dineshyadyvanshee",
+            age:23   
+        };
+    }
+    nameChangeHandler(){
+        console.log(this.state);
+        this.setState({name:"dinesh", age:23}, () => {
+            console.log(this.state);
+        });
+    }
     render() {
         return (
             <div className="App-header">
                 {/* <div className="App-header">Name: Av-Roadlines</div>
                 <div>Age: 11 years</div> */}
-                <i>Welcome to Av-Roadlines</i>
-                <h2>Testing</h2>
+               <h1> <i>Dear {this.state.name} {this.state.age} years Welcome to Av-Roadlines</i>
+               <br/>
+              <button onClick={this.nameChangeHandler.bind(this)}>click Me</button>
+               </h1>
+               
+                
                 {/* <Man /> */}
             </div>
         );
