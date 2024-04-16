@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Person.css";
+import PersonStyle from"./Person.module.css";
 import Man from "../Man";
 import App from "../../App";
 
@@ -19,13 +19,15 @@ class Person extends Component {
         });
     }
     render() {
+        console.log(PersonStyle)
         const style = {
             fontSize:"20px",
             color:"red"
         }
         return (
 
-            <div className="PersonBox">
+            <div className={PersonStyle.PersonBox} onClick={ this.props.remove}>
+                {this.props.index}
                 {/* <div className="App-header">Name: Av-Roadlines</div>
                 <div>Age: 11 years</div> */}
                <h1> <label className="PersonLabel">Name : </label> <i>{this.props.name}</i>
@@ -35,9 +37,9 @@ class Person extends Component {
                
               <button onClick={this.nameChangeHandler.bind(this)}>click Me</button>
                </h1>
-               
                 
-                <Man />
+                {/* <Person name={this.state.per.name[0]} age="22" /> */}
+                {/* <Man /> */}
             </div>
         );
 
