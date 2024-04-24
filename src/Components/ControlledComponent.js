@@ -4,7 +4,6 @@ class ControlledComponent extends Component{
         super(props);
         this.state = {
             name:"Av-Readlines",
-
         };
     }
     changeHandler = (event) =>{
